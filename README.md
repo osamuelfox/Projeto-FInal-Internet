@@ -133,9 +133,4 @@ O **MoodWheel** é um gráfico de rosca (*donut chart*) implementado com **SVG p
 
 ---
 
-## 👤 Autor
-
-> **Nome:** Samuel Souza
-> **Disciplina:** Linguagem de Programação para Internet  
-> **Instituição:** UNIUBE
-> **Data:** Junho de 2026
+## 👤 Autor: Samuel Souza
