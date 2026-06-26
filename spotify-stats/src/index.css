@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+/*
+  DESIGN SYSTEM — SpotiStats
+  ──────────────────────────
+  Paleta com propósito:
+    --color-brand    : ação principal, links ativos, dados em destaque
+    --color-surface  : cards, painéis — leve separação do fundo
+    --color-base     : fundo da aplicação
+    --color-ink-1    : texto primário
+    --color-ink-2    : texto secundário — metadados, labels
+    --color-ink-3    : texto terciário — placeholders, desabilitados
+    --color-border   : divisores e contornos de card
+    --color-border-focus : contorno no estado ativo/hover
+
+  Escala de espaçamento: 4 · 8 · 12 · 16 · 24 · 32 · 48 · 64px
+  Border-radius: 4px (pequeno, badges) / 8px (cards, inputs) — só dois valores
+  Tipografia: uma família, quatro tamanhos, três pesos
+*/
+
+:root {
+  /* Cores */
+  --color-brand:        #1DB954;
+  --color-brand-hover:  #18a349;
+  --color-base:         #111111;
+  --color-surface:      #1a1a1a;
+  --color-surface-alt:  #222222;
+  --color-ink-1:        #f0f0f0;
+  --color-ink-2:        #a0a0a0;
+  --color-ink-3:        #555555;
+  --color-border:       #2a2a2a;
+  --color-border-focus: #3a3a3a;
+
+  /* Tipografia */
+  --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --text-xs:   0.75rem;   /* 12px — labels, badges */
+  --text-sm:   0.875rem;  /* 14px — corpo secundário */
+  --text-md:   1rem;      /* 16px — corpo principal */
+  --text-lg:   1.125rem;  /* 18px — subtítulos */
+  --text-xl:   1.5rem;    /* 24px — títulos de seção */
+  --text-2xl:  2rem;      /* 32px — títulos de página */
+
+  /* Espaçamento */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Radius: somente dois valores */
+  --radius-sm: 4px;  /* badges, tags */
+  --radius-md: 8px;  /* cards, inputs, botões */
+
+  /* Sombra funcional: apenas para elementos elevados */
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.4);
+
+  /* Navegação */
+  --nav-height: 60px;
+
+  /* Transição */
+  --transition-fast: 150ms ease;
+  --transition-base: 200ms ease;
+}
+
+/* ── RESET ─────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-base);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  background: var(--color-base);
+  color: var(--color-ink-1);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img { display: block; }
+button { font-family: inherit; }
+a { color: inherit; text-decoration: none; }
+
+/* ── SCROLLBAR ──────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-focus);
+  border-radius: 2px;
+}
+
+/* ── LAYOUT UTILITIES ───────────────────────────── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+.page {
+  padding-top: calc(var(--nav-height) + var(--space-8));
+  padding-bottom: var(--space-16);
+  min-height: 100vh;
+}
+
+/* ── TIPOGRAFIA ─────────────────────────────────── */
+.page-heading {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--color-ink-1);
+  margin-bottom: var(--space-1);
+}
+
+.page-subheading {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  margin-bottom: var(--space-8);
+}
+
+.section-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-3);
+  margin-bottom: var(--space-4);
+}
+
+/* ── BADGE ──────────────────────────────────────── */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.badge--brand {
+  background: rgba(29, 185, 84, 0.12);
+  color: var(--color-brand);
+  border-color: rgba(29, 185, 84, 0.2);
+}
+
+.badge--muted {
+  background: var(--color-surface-alt);
+  color: var(--color-ink-2);
+  border-color: var(--color-border);
+}
+
+/* ── ANIMAÇÕES — apenas funcionais ─────────────── */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bar-grow {
+  from { width: 0; }
+}
+
+.animate-in {
+  animation: fade-in 240ms ease forwards;
+}

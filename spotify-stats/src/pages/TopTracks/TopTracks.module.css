@@ -1,0 +1,66 @@
+/* TopTracks.module.css */
+
+.periodTabs {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  /* Borda inferior cria a sensação de tab bar, sem pill exagerado */
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: var(--space-3);
+}
+
+.tab {
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-md);
+  border: none;
+  background: none;
+  color: var(--color-ink-2);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.tab:hover {
+  color: var(--color-ink-1);
+  background: var(--color-surface);
+}
+
+.tab.active {
+  background: var(--color-surface);
+  color: var(--color-ink-1);
+  font-weight: 600;
+  position: relative;
+}
+
+/* Underline no tab ativo — padrão de produto real */
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: calc(-1 * var(--space-3) - 1px);
+  left: var(--space-3);
+  right: var(--space-3);
+  height: 2px;
+  background: var(--color-brand);
+  border-radius: 1px 1px 0 0;
+}
+
+/* Contexto do período selecionado: texto, não banner colorido */
+.periodContext {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  margin-bottom: var(--space-6);
+  padding-left: var(--space-1);
+  border-left: 2px solid var(--color-border-focus);
+  padding-left: var(--space-3);
+}
+
+.periodContext strong {
+  color: var(--color-ink-1);
+}
+
+.trackList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}

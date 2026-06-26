@@ -1,0 +1,47 @@
+/* TopArtists.module.css */
+
+.filterRow {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-8);
+}
+
+.filterChip {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  background: none;
+  color: var(--color-ink-2);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast),
+              background var(--transition-fast);
+}
+
+.filterChip:hover {
+  color: var(--color-ink-1);
+  border-color: var(--color-border-focus);
+}
+
+.filterChip.selected {
+  color: var(--color-brand);
+  border-color: rgba(29, 185, 84, 0.35);
+  background: rgba(29, 185, 84, 0.08);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--space-4);
+}
+
+.emptyState {
+  grid-column: 1 / -1;
+  padding: var(--space-16) var(--space-6);
+  text-align: center;
+  color: var(--color-ink-3);
+  font-size: var(--text-sm);
+}

@@ -1,0 +1,171 @@
+/* ArtistCard.module.css
+   Decisões:
+   - translateY(-6px) no hover: reduzido para -3px — levantamento sutil
+   - box-shadow 20px 40px: eliminado — --shadow-elevated funcional
+   - rankBadge gold/silver/bronze com glassmorphism: simplificado para número simples
+   - overlay bio: mantido — hover com info é padrão legítimo em grids de artista
+*/
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base),
+              transform var(--transition-base);
+}
+
+.card:hover {
+  border-color: var(--color-border-focus);
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-3px);
+}
+
+.card:hover .imageOverlay {
+  opacity: 1;
+}
+
+.card:hover .photo {
+  transform: scale(1.04);
+}
+
+/* Imagem quadrada responsiva */
+.photoWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  background: var(--color-surface-alt);
+}
+
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 300ms ease;
+}
+
+/* Overlay com bio — funcional: aparece só no hover */
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 55%);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-3);
+}
+
+.bio {
+  font-size: var(--text-xs);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+}
+
+/* Badge de ranking: número limpo, sem glassmorphism */
+.rankBadge {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  min-width: 28px;
+  height: 20px;
+  padding: 0 var(--space-2);
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-ink-2);
+  font-variant-numeric: tabular-nums;
+  /* Top 3: destaque mínimo com brand color */
+  border: 1px solid transparent;
+}
+
+.rankBadge.featured {
+  color: var(--color-brand);
+  border-color: rgba(29, 185, 84, 0.3);
+}
+
+/* Corpo do card */
+.body {
+  padding: var(--space-3) var(--space-4);
+}
+
+.artistName {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-ink-1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 2px;
+}
+
+.topTrack {
+  font-size: var(--text-xs);
+  color: var(--color-ink-3);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: var(--space-3);
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+}
+
+.genreTag {
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--color-surface-alt);
+  color: var(--color-ink-2);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.genreTag:hover {
+  color: var(--color-ink-1);
+  border-color: var(--color-border-focus);
+}
+
+.genreTag.selected {
+  color: var(--color-brand);
+  border-color: rgba(29, 185, 84, 0.35);
+  background: rgba(29, 185, 84, 0.08);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.playsValue {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ink-1);
+  font-variant-numeric: tabular-nums;
+}
+
+.playsLabel {
+  font-size: var(--text-xs);
+  color: var(--color-ink-3);
+  margin-left: 2px;
+}
+
+.listenersCount {
+  font-size: var(--text-xs);
+  color: var(--color-ink-3);
+  text-align: right;
+}

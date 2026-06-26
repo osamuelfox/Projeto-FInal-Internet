@@ -1,0 +1,137 @@
+/* Insights.module.css */
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+/* Painel genérico */
+.panel {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-6);
+}
+
+.panelHeading {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-ink-1);
+  margin-bottom: var(--space-6);
+}
+
+/* Cards de métricas rápidas */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.metricCard {
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-3) var(--space-4);
+}
+
+.metricValue {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-ink-1);
+  letter-spacing: -0.02em;
+  margin-bottom: 2px;
+}
+
+.metricLabel {
+  font-size: var(--text-xs);
+  color: var(--color-ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Gráfico de barras de horário */
+.hourChart {
+  margin-top: var(--space-2);
+}
+
+.hourChartLabel {
+  font-size: var(--text-xs);
+  color: var(--color-ink-3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  margin-bottom: var(--space-3);
+}
+
+.barGroup {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 80px;
+}
+
+.hourBar {
+  flex: 1;
+  border-radius: 2px 2px 0 0;
+  background: var(--color-border-focus);
+  transition: background var(--transition-fast);
+  cursor: default;
+}
+
+.hourBar:hover {
+  background: var(--color-brand);
+}
+
+.hourBar.peak {
+  background: var(--color-brand);
+}
+
+.xLabels {
+  display: flex;
+  gap: 3px;
+  margin-top: var(--space-1);
+}
+
+.xLabel {
+  flex: 1;
+  font-size: 9px;
+  color: var(--color-ink-3);
+  text-align: center;
+}
+
+/* MoodWheel: painel ocupa largura total */
+.moodPanel {
+  grid-column: 1 / -1;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-8);
+}
+
+.moodPanelHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.moodPanelHeading {
+  font-size: var(--text-md);
+  font-weight: 600;
+  color: var(--color-ink-1);
+}
+
+.moodPanelSub {
+  font-size: var(--text-sm);
+  color: var(--color-ink-2);
+  margin-bottom: var(--space-8);
+}
+
+@media (max-width: 768px) {
+  .layout { grid-template-columns: 1fr; }
+  .moodPanel { grid-column: 1; }
+}

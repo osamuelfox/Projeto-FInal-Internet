@@ -1,0 +1,122 @@
+export const userProfile = {
+  name: "Lucas Ferreira",
+  username: "@lucasferreira",
+  avatar: "https://i.pravatar.cc/150?img=52",
+  followers: 284,
+  following: 61,
+  country: "Brasil 🇧🇷",
+  memberSince: "Março de 2019",
+  isPremium: true,
+};
+
+export const overallStats = {
+  hoursListened: 1847,
+  savedSongs: 634,
+  followedArtists: 89,
+  playlistsCreated: 23,
+  minutesThisMonth: 2340,
+  topGenre: "Pop",
+  favoriteTime: "22h–00h",
+  streakDays: 47,
+};
+
+export const genreStats = [
+  { name: "Pop", percentage: 42, color: "#1DB954" },
+  { name: "Rock", percentage: 22, color: "#E91E63" },
+  { name: "R&B", percentage: 15, color: "#9C27B0" },
+  { name: "Dance/Eletrônico", percentage: 12, color: "#2196F3" },
+  { name: "Indie", percentage: 6, color: "#FF9800" },
+  { name: "Country", percentage: 3, color: "#F44336" },
+];
+
+export const listeningHours = [
+  { hour: "00h", value: 18 },
+  { hour: "02h", value: 5 },
+  { hour: "04h", value: 2 },
+  { hour: "06h", value: 8 },
+  { hour: "08h", value: 25 },
+  { hour: "10h", value: 32 },
+  { hour: "12h", value: 28 },
+  { hour: "14h", value: 35 },
+  { hour: "16h", value: 42 },
+  { hour: "18h", value: 55 },
+  { hour: "20h", value: 68 },
+  { hour: "22h", value: 85 },
+];
+
+export const moodData = [
+  { mood: "Energetic", percentage: 35, color: "#E91E63", emoji: "🔴", description: "Músicas que te fazem correr mais rápido" },
+  { mood: "Chill", percentage: 25, color: "#9C27B0", emoji: "💜", description: "Para relaxar e contemplar" },
+  { mood: "Happy", percentage: 20, color: "#FFD600", emoji: "💛", description: "Aquele astral contagiante" },
+  { mood: "Melancholic", percentage: 15, color: "#2196F3", emoji: "💙", description: "Sentimentos profundos e reflexivos" },
+  { mood: "Focus", percentage: 5, color: "#1DB954", emoji: "🟢", description: "Para concentração total" },
+];
+
+export const playlists = [
+  {
+    id: 1,
+    name: "Hits do Verão",
+    cover: "https://picsum.photos/seed/playlist-verao/300/300",
+    songs: 24,
+    duration: "1h 22min",
+    mood: "Energetic",
+    description: "As melhores músicas para o verão. Vibes quentes, ritmo alto.",
+    lastUpdated: "há 3 dias",
+    songList: [1, 2, 3, 4, 5],
+  },
+  {
+    id: 2,
+    name: "Noite de Trabalho",
+    cover: "https://picsum.photos/seed/playlist-trabalho/300/300",
+    songs: 18,
+    duration: "1h 08min",
+    mood: "Focus",
+    description: "Trilha sonora perfeita para codar, estudar e criar.",
+    lastUpdated: "há 1 semana",
+    songList: [6, 9, 10, 7],
+  },
+  {
+    id: 3,
+    name: "Chorando no Chuveiro",
+    cover: "https://picsum.photos/seed/playlist-chuveiro/300/300",
+    songs: 31,
+    duration: "2h 04min",
+    mood: "Melancholic",
+    description: "Para os dias que a saudade bate mais forte.",
+    lastUpdated: "há 2 semanas",
+    songList: [7, 8, 6, 2],
+  },
+  {
+    id: 4,
+    name: "Academia",
+    cover: "https://picsum.photos/seed/playlist-academia/300/300",
+    songs: 42,
+    duration: "2h 38min",
+    mood: "Energetic",
+    description: "Energia máxima para treinar pesado e superar limites.",
+    lastUpdated: "há 5 dias",
+    songList: [1, 4, 5, 8, 3],
+  },
+  {
+    id: 5,
+    name: "Viagem de Carro",
+    cover: "https://picsum.photos/seed/playlist-carro/300/300",
+    songs: 56,
+    duration: "3h 14min",
+    mood: "Happy",
+    description: "Para a estrada, janela aberta e cantar alto sem vergonha.",
+    lastUpdated: "há 1 mês",
+    songList: [2, 3, 6, 1, 4],
+  },
+  {
+    id: 6,
+    name: "Late Night Chill",
+    cover: "https://picsum.photos/seed/playlist-latenight/300/300",
+    songs: 19,
+    duration: "1h 18min",
+    mood: "Chill",
+    description: "Madrugada, fones no ouvido, pensamentos soltos.",
+    lastUpdated: "há 4 dias",
+    songList: [6, 7, 9, 10],
+  },
+];
