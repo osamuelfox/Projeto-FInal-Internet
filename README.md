@@ -98,7 +98,7 @@ Grade de 6 playlists com capa, descrição e badge de humor. Ao clicar, a playli
 
 ---
 
-## 🎭 Componente Criativo — MoodWheel
+## 🎭 Componente Criativo - MoodWheel
 
 O **MoodWheel** é um gráfico de rosca (*donut chart*) implementado com **SVG puro** (sem bibliotecas externas) que visualiza a distribuição de humor das músicas favoritas do usuário.
 
@@ -135,7 +135,7 @@ O **MoodWheel** é um gráfico de rosca (*donut chart*) implementado com **SVG p
 
 ## 👤 Autor
 
-**Nome:** Samuel Souza
-**Disciplina:** Linguagem de Programação para Internet  
-**Instituição:** UNIUBE
-**Data:** Junho de 2026
+> **Nome:** Samuel Souza
+> **Disciplina:** Linguagem de Programação para Internet  
+> **Instituição:** UNIUBE
+> **Data:** Junho de 2026
